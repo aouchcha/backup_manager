@@ -24,7 +24,8 @@ def backupManager():
         # print("Stopping backup service...")
         stopProcess()
     elif args.command == "backups":
-        print("Listing backup files in ./backups...")
+        # print("Listing backup files in ./backups...")
+        ListBackupExist()
     else:
         print("No command provided. Use -h for help.")
 
@@ -106,6 +107,7 @@ def deleteBackupSchedule(index):
          
 def startProcess():
     now = time.time()
+    print(now)
     timestr = time.strftime("%d/%m/%Y %H:%M", time.localtime(now))
     content = ''
     checkProcess = subprocess.Popen(
@@ -139,22 +141,19 @@ def stopProcess():
     finally:
         writeInLogFile(f"[{timestr}] {content}")
 
-# def extractData(schedule):
-#     sli = schedule.split(";")
-#     if len(sli) != 3:
-#         return None
-#     path_to_save = sli[0]
-#     we9t = sli[1]
-#     backup_name = sli[2]
-#     time_sli = we9t.split(":")
-#     if len(time_sli) != 2:
-#         return None
-#     hour = time_sli[0]
-#     minute = time_sli[1]
-#     now = time.time()
-#     timestr = time.strftime("%d/%m/%Y %H:%M", time.localtime(now))
-#     return f"[{timestr}] New schedule added: {path_to_save} "
-    
+def ListBackupExist():
+    now = time.time()
+    timestr = time.strftime("%d/%m/%Y %H:%M", time.localtime(now))
+    content = ""
+    if not os.path.exists("./backups"):
+        content = "Error: can't find backups directory"
+    else:
+        entrys = os.listdir("./backups")
+        for entry in entrys:
+            print(entry)
+        content = "Show backups list"
+    writeInLogFile(f"[{timestr}] {content}")
+
 
 if __name__ == "__main__":
     backupManager()
