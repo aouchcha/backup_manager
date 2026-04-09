@@ -1,0 +1,20 @@
+[09/04/2026 17:23] New schedule added: test;16:07;backup_test0
+[09/04/2026 17:23] New schedule added: test;16:07;backup_test1
+[09/04/2026 17:23] New schedule added: test;16:07;backup_test0
+[09/04/2026 17:23] Error: malformed schedule: testtest2
+[09/04/2026 17:23] Show schedules list
+[09/04/2026 18:32] backup_service started
+[09/04/2026 18:37] backup_service started
+[09/04/2026 18:37] backup_service started
+[09/04/2026 18:41] Error: backup_service already running
+[09/04/2026 18:42] backup_service started
+[09/04/2026 18:42] Error: backup_service already running
+[09/04/2026 18:42] Error: backup_service already running
+[09/04/2026 18:57] backup_service stopped
+[09/04/2026 18:57] Error: can't stop backup_service
+[09/04/2026 18:58] Error: can't stop backup_service
+[09/04/2026 18:58] backup_service started
+[09/04/2026 18:58] Error: backup_service already running
+[09/04/2026 18:58] Error: backup_service already running
+[09/04/2026 18:58] backup_service stopped
+[09/04/2026 18:58] Error: can't stop backup_service
