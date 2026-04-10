@@ -27,8 +27,7 @@ def backupManager():
         # print("Listing backup files in ./backups...")
         ListBackupExist()
     else:
-        print("No command provided. Use -h for help.")
-
+        writeInLogFile("No valid command provided. Use -h for help.")
 
 def ParseArgs():
     parser  = argparse.ArgumentParser(add_help=False)
