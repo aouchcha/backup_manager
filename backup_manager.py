@@ -57,7 +57,7 @@ def createBackupSchedule(schedule):
     
 
 def checkScheduleFormat(schedule):
-    return re.match(r"[a-zA-Z]+;[0-9]+:[0-9]+;[a-zA-Z]+", schedule)
+    return re.match(r"[a-zA-Z0-9]+;[0-9]+:[0-9]+;[a-zA-Z0-9]+", schedule)
 
 def WriteInFile(filename, content):
     if os.path.exists(filename):
@@ -107,7 +107,6 @@ def deleteBackupSchedule(index):
          
 def startProcess():
     now = time.time()
-    print(now)
     timestr = time.strftime("%d/%m/%Y %H:%M", time.localtime(now))
     content = ''
     checkProcess = subprocess.Popen(
